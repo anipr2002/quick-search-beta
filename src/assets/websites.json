@@ -1,0 +1,67 @@
+[
+    {
+        "name": "Google",
+        "url": "https://www.google.com/search?q=",
+        "colorTheme": "#FABB05"
+    },
+    {
+        "name": "Facebook",
+        "url": "https://www.facebook.com/search/top/?q=",
+        "colorTheme": "#316FF6"
+    },
+    {
+        "name": "Twitter",
+        "url": "https://www.twitter.com/search?q=",
+        "colorTheme": "#1da1f2"
+    },
+    {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/search/results/all/?keywords=",
+        "colorTheme": "#0077b5"
+    },
+    {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/results?search_query=",
+        "colorTheme": "#FF0000"
+    },
+    {
+        "name": "Instagram",
+        "url": "https://www.instagram.com/explore/tags/",
+        "colorTheme": "#F70262"
+    },
+    {
+        "name": "Pinterest",
+        "url": "https://www.pinterest.com/search/pins/?q=",
+        "colorTheme": "#b7081b"
+    },
+    {
+        "name": "Twitch",
+        "url": "https://www.twitch.tv/",
+        "colorTheme": "#9670DC"
+    },
+    {
+        "name": "Reddit",
+        "url": "https://www.reddit.com/search/?q",
+        "colorTheme": "#F72617"
+    },
+    {
+        "name": "Amazon",
+        "url": "https://www.amazon.com/s?k=",
+        "colorTheme": "#ff9600"
+    },
+    {
+        "name": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/",
+        "colorTheme": "#000000"
+    },
+    {
+        "name": "Spotify",
+        "url": "https://open.spotify.com/search/",
+        "colorTheme": "#09d659"
+    },
+    {
+        "name": "GitHub",
+        "url": "https://www.github.com/search?q=",
+        "colorTheme": "#0E0D0C"
+    }
+]

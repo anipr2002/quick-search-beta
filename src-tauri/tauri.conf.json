@@ -1,0 +1,66 @@
+{
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "Quick-surf-beta-0.0.0",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "systemTray":{
+      "title": "Quick-surf",
+      "iconPath": "icons/32x32.png"
+    },
+    "allowlist": {
+      "all": false,
+      "globalShortcut": {
+        "all": true
+      },
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "window": {
+        "setAlwaysOnTop": true,
+        "minimize": true,
+        "maximize": true,
+        "unmaximize": true,
+        "unminimize": true,
+        "setDecorations": false,
+        "setFocus": true
+      }
+    },
+    "windows": [
+      {
+        "decorations": false,
+        "transparent": true,
+        "title": "",
+        "center": true,
+        "width": 1920,
+        "height": 100
+      }
+    ],
+    
+    "security": {
+      "csp": null
+    },
+    "bundle": {
+      "active": true,
+      "deb": {
+        "files": {}
+      },
+      "targets": "all",
+      "identifier": "com.quick-surf.dev",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    }
+  }
+}
