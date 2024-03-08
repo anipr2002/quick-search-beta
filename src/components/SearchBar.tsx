@@ -46,7 +46,10 @@ const SearchBar = () => {
       handleTabPress();
       //   console.log(colorTheme);
     } else if (e.key === "Escape") {
-      if (!tabpressed) await appWindow.minimize();
+      if (!tabpressed) {
+        await appWindow.minimize();
+        resetData();
+      }
       resetData();
       inputRef.current?.focus();
     } else if (e.key === "Enter") {
@@ -55,6 +58,10 @@ const SearchBar = () => {
       resetData();
     } else if (e.key === "Backspace") {
       setMatchedWebsite(null);
+    } else if (e.key === "Enter" && searchQuery === "") {
+      redirectToWebsiteName();
+      if (!isMinimized) appWindow.minimize();
+      resetData();
     }
   };
 
@@ -124,12 +131,26 @@ const SearchBar = () => {
 
   //useEffect for tab to matched website
 
-  const constructWebsiteURL = (url: string, searchQuery: string): string => {
+  const constructWebsiteURL = (
+    SearchURL: string,
+    searchQuery: string
+  ): string => {
     const website: Website = websiteData.find(
-      (website) => website.name.toLowerCase() === url.toLowerCase()
+      (website) => website.name.toLowerCase() === SearchURL.toLowerCase()
     ) as Website;
     if (website) {
-      return website.url + searchQuery;
+      return website.SearchURL + searchQuery;
+    } else {
+      return "https://www.google.com/search?q=" + websiteName + searchQuery;
+    }
+  };
+
+  const contructWebsiteName = (websiteName: string): string => {
+    const website: Website = websiteData.find(
+      (website) => website.name.toLowerCase() === websiteName.toLowerCase()
+    ) as Website;
+    if (website) {
+      return website.url;
     } else {
       return "https://www.google.com/search?q=" + websiteName + searchQuery;
     }
@@ -141,8 +162,20 @@ const SearchBar = () => {
 
   const redirectToWebsite = (): void => {
     if (isValidWebsiteName(websiteName)) {
-      const url: string = constructWebsiteURL(websiteName, searchQuery);
-      open(url).catch((e) => {
+      const searchURL: string = constructWebsiteURL(websiteName, searchQuery);
+      open(searchURL).catch((e) => {
+        console.error("Error opening the URL:", e);
+      });
+    } else {
+      alert("Please enter a valid website name");
+      console.error("Please enter a valid website name");
+    }
+  };
+
+  const redirectToWebsiteName = (): void => {
+    if (isValidWebsiteName(websiteName)) {
+      const websiteURL: string = contructWebsiteName(websiteName);
+      open(websiteURL).catch((e) => {
         console.error("Error opening the URL:", e);
       });
     } else {
