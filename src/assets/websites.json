@@ -1,67 +1,86 @@
 [
     {
         "name": "Google",
-        "url": "https://www.google.com/search?q=",
+        "url" : "https://www.google.com",
+        "SearchURL": "https://www.google.com/search?q=",
         "colorTheme": "#FABB05"
     },
     {
         "name": "Facebook",
-        "url": "https://www.facebook.com/search/top/?q=",
+        "url" : "https://www.facebook.com",
+        "SearchURL": "https://www.facebook.com/search/top/?q=",
         "colorTheme": "#316FF6"
     },
     {
         "name": "Twitter",
-        "url": "https://www.twitter.com/search?q=",
+        "url" : "https://www.twitter.com",
+        "SearchURL": "https://www.twitter.com/search?q=",
         "colorTheme": "#1da1f2"
     },
     {
         "name": "LinkedIn",
-        "url": "https://www.linkedin.com/search/results/all/?keywords=",
+        "url" : "https://www.linkedin.com",
+        "SearchURL": "https://www.linkedin.com/search/results/all/?keywords=",
         "colorTheme": "#0077b5"
     },
     {
         "name": "YouTube",
-        "url": "https://www.youtube.com/results?search_query=",
+        "url" : "https://www.youtube.com",
+        "SearchURL": "https://www.youtube.com/results?search_query=",
         "colorTheme": "#FF0000"
     },
     {
         "name": "Instagram",
-        "url": "https://www.instagram.com/explore/tags/",
+        "url" : "https://www.instagram.com",
+        "SearchURL": "https://www.instagram.com/explore/tags/",
         "colorTheme": "#F70262"
     },
     {
         "name": "Pinterest",
-        "url": "https://www.pinterest.com/search/pins/?q=",
+        "url" : "https://www.pinterest.com",
+        "SearchURL": "https://www.pinterest.com/search/pins/?q=",
         "colorTheme": "#b7081b"
     },
     {
         "name": "Twitch",
-        "url": "https://www.twitch.tv/",
+        "url" : "https://www.twitch.tv",
+        "SearchURL": "https://www.twitch.tv/",
         "colorTheme": "#9670DC"
     },
     {
         "name": "Reddit",
-        "url": "https://www.reddit.com/search/?q",
+        "url" : "https://www.reddit.com",
+        "SearchURL": "https://www.reddit.com/search/?q",
         "colorTheme": "#F72617"
     },
     {
         "name": "Amazon",
-        "url": "https://www.amazon.com/s?k=",
+        "url" : "https://www.amazon.com",
+        "SearchURL": "https://www.amazon.com/s?k=",
         "colorTheme": "#ff9600"
     },
     {
         "name": "Wikipedia",
-        "url": "https://en.wikipedia.org/wiki/",
+        "url" : "https://www.wikipedia.org",
+        "SearchURL": "https://en.wikipedia.org/wiki/",
         "colorTheme": "#000000"
     },
     {
         "name": "Spotify",
-        "url": "https://open.spotify.com/search/",
+        "url" : "https://www.spotify.com",
+        "SearchURL": "https://open.spotify.com/search/",
         "colorTheme": "#09d659"
     },
     {
-        "name": "GitHub",
-        "url": "https://www.github.com/search?q=",
-        "colorTheme": "#0E0D0C"
+        "name": "Netflix",
+        "url" : "https://www.netflix.com",
+        "SearchURL": "https://www.netflix.com/search?q=",
+        "colorTheme": "#de0912"
+    },
+    {
+        "name": "ChatGpt",
+        "url" : "https://www.chatgpt.com",
+        "SearchURL": "https://www.chatgpt.com/search?q=",
+        "colorTheme":"#78ad9f"
     }
 ]
