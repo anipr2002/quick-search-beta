@@ -13,8 +13,9 @@ import {
   FaAmazon,
   FaWikipediaW,
   FaSpotify,
-  FaGithub,
+  FaSearch,
 } from "react-icons/fa";
+import { SiNetflix } from "react-icons/si";
 
 interface IconsProps {
   name: string;
@@ -36,7 +37,7 @@ const Icons: React.FC<IconsProps> = ({ name, size }) => {
     amazon: <FaAmazon size={size} />,
     wikipedia: <FaWikipediaW size={size} />,
     spotify: <FaSpotify size={size} />,
-    github: <FaGithub size={size} />,
+    netflix: <SiNetflix size={size} />,
   };
 
   // Get the icon based on the provided website name
@@ -44,8 +45,7 @@ const Icons: React.FC<IconsProps> = ({ name, size }) => {
 
   // If the provided name doesn't match any known icon, you can provide a default icon or handle it as needed
   if (!selectedIcon) {
-    // You can return a default icon or null, or handle the case in a way that makes sense for your application
-    return null;
+    return <FaSearch size={size} />;
   }
 
   return selectedIcon;
