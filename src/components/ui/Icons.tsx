@@ -18,6 +18,7 @@ import {
 } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa6";
 import { SiNetflix } from "react-icons/si";
+import { SiMonkeytype } from "react-icons/si";
 
 interface IconsProps {
   name: string;
@@ -42,6 +43,7 @@ const Icons: React.FC<IconsProps> = ({ name, size }) => {
     netflix: <SiNetflix size={size} />,
     gmail: <FaEnvelope size={size} />,
     github: <FaGithub size={size} />,
+    monkeytype: <SiMonkeytype size={size} />,
   };
 
   // Get the icon based on the provided website name

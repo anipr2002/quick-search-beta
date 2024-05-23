@@ -8,6 +8,7 @@ import useStore from "../store/store";
 import { getAutocompleteSuggestions } from "../helper/autocompleteHelper";
 import { open } from "@tauri-apps/api/shell";
 import { appWindow } from "@tauri-apps/api/window";
+import { cn } from "../utils/cn";
 
 const SearchBar = () => {
   const {
@@ -187,7 +188,7 @@ const SearchBar = () => {
   return (
     <div className="w-screen h-screen bg-transparent px-96 flex items-center justify-center">
       <div
-        className={`w-full h-20 grainy rounded-xl gap-5 flex items-center px-4 bg-black/95`}
+        className="w-full h-20 grainy rounded-xl gap-5 flex items-center px-4 bg-[#0B1215]/95"
         style={{
           boxShadow: `0 0 5px ${colorTheme}, 0 0 15px ${colorTheme}`,
         }}
@@ -209,7 +210,7 @@ const SearchBar = () => {
               <input
                 type="text"
                 placeholder="Enter Website"
-                className="w-full h-full flex-1 p-2 bg-transparent outline-none font-medium text-xl"
+                className="w-full h-full flex-1 p-2 bg-transparent outline-none font-medium text-white text-xl"
                 onKeyDown={handleKeyPress}
                 onChange={(e) => {
                   setWebsiteName(e.target.value);
@@ -237,8 +238,8 @@ const SearchBar = () => {
                 )}
                 {!matchedWebsite && (
                   <>
-                    <span className={"mr-2"}>Tab to Search</span>
-                    <div>
+                    <span className={"mr-2 text-white/70"}>Tab to Search</span>
+                    <div className="text-white/70">
                       <MdOutlineKeyboardTab />
                     </div>
                   </>

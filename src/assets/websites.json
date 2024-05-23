@@ -94,5 +94,11 @@
         "url":"https://github.com",
         "SearchURL":"https://github.com/search?q=",
         "colorTheme":"#010409"
+    },
+    {
+        "name":"Monkeytype",
+        "url":"https://monkeytype.com",
+        "SearchURL":"https://monkeytype.com/",
+        "colorTheme":"#e2b718"
     }
 ]
