@@ -1,24 +1,6 @@
 import React from "react";
-
-import {
-  FaGoogle,
-  FaFacebook,
-  FaTwitter,
-  FaLinkedin,
-  FaYoutube,
-  FaInstagram,
-  FaPinterest,
-  FaTwitch,
-  FaReddit,
-  FaAmazon,
-  FaWikipediaW,
-  FaSpotify,
-  FaSearch,
-  FaGithub,
-} from "react-icons/fa";
-import { FaEnvelope } from "react-icons/fa6";
-import { SiNetflix } from "react-icons/si";
-import { SiMonkeytype } from "react-icons/si";
+import { Icon } from "@iconify/react";
+import { FaSearch } from "react-icons/fa";
 
 interface IconsProps {
   name: string;
@@ -28,22 +10,26 @@ interface IconsProps {
 const Icons: React.FC<IconsProps> = ({ name, size }) => {
   // Define a mapping of website names to Lucide icons
   const iconMap: { [key: string]: React.ReactElement } = {
-    google: <FaGoogle size={size} />,
-    facebook: <FaFacebook size={size} />,
-    twitter: <FaTwitter size={size} />,
-    linkedin: <FaLinkedin size={size} />,
-    youtube: <FaYoutube size={size} />,
-    instagram: <FaInstagram size={size} />,
-    pinterest: <FaPinterest size={size} />,
-    twitch: <FaTwitch size={size} />,
-    reddit: <FaReddit size={size} />,
-    amazon: <FaAmazon size={size} />,
-    wikipedia: <FaWikipediaW size={size} />,
-    spotify: <FaSpotify size={size} />,
-    netflix: <SiNetflix size={size} />,
-    gmail: <FaEnvelope size={size} />,
-    github: <FaGithub size={size} />,
-    monkeytype: <SiMonkeytype size={size} />,
+    google: <Icon fontSize={size} icon="logos:google-icon" />,
+    facebook: <Icon fontSize={size} icon="logos:facebook" />,
+    twitter: <Icon fontSize={size} icon="logos:twitter" />,
+    linkedin: <Icon fontSize={size} icon="logos:linkedin-icon" />,
+    youtube: <Icon fontSize={size} icon="logos:youtube-icon" />,
+    instagram: <Icon fontSize={size} icon="skill-icons:instagram" />,
+    pinterest: <Icon fontSize={size} icon="logos:pinterest" />,
+    twitch: <Icon fontSize={size} icon="logos:twitch" />,
+    reddit: <Icon fontSize={size} icon="logos:reddit-icon" />,
+    amazon: <Icon fontSize={size} icon="ri:amazon-fill" />,
+    wikipedia: <Icon fontSize={size} icon="flat-color-icons:wikipedia" />,
+    spotify: <Icon fontSize={size} icon="logos:spotify-icon" />,
+    netflix: <Icon fontSize={size} icon="logos:netflix" />,
+    chatgpt: <Icon fontSize={size} icon="arcticons:openai-chatgpt" />,
+    gmail: <Icon fontSize={size} icon="logos:google-gmail" />,
+    github: <Icon fontSize={size} icon="skill-icons:github-light" />,
+    monkeytype: <Icon fontSize={size} icon="simple-icons:monkeytype" />,
+    medium: <Icon fontSize={size} icon="logos:medium-icon" />,
+    notion: <Icon fontSize={size} icon="logos:notion-icon" />,
+    slack: <Icon fontSize={size} icon="devicon:slack" />,
   };
 
   // Get the icon based on the provided website name

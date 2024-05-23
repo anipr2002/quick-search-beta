@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Search } from "lucide-react";
 import { MdOutlineKeyboardTab } from "react-icons/md";
 import Icons from "./ui/Icons";
+import SmIcons from "./ui/SmIcon";
 import websiteData from "../assets/websites.json";
 import { Website } from "../types/website";
 import useStore from "../store/store";
@@ -41,6 +42,10 @@ const SearchBar = () => {
     return searchQuery.split(" ").join("+");
   };
 
+  const removePlusBetweenWords = (searchQuery: string): string => {
+    return searchQuery.split("+").join(" ");
+  };
+
   const handleKeyPress = async (
     e: React.KeyboardEvent<HTMLInputElement>
   ): Promise<void> => {
@@ -63,13 +68,16 @@ const SearchBar = () => {
       setMatchedWebsite(null);
     } else if (e.key === "Enter" && searchQuery === "") {
       redirectToWebsiteName();
+      resetData();
       if (!isMinimized) appWindow.minimize();
+
       resetData();
     }
   };
 
   const resetData = (): void => {
     setTabPressed(false);
+    setWebsiteName("");
     setSearchQuery("");
     setMatchedWebsite(null);
     setColorTheme("#8D9093");
@@ -230,7 +238,9 @@ const SearchBar = () => {
                   if (e.target.value === "") {
                     setMatchedWebsite(null);
                   }
+                  // resetData();
                 }}
+                value={removePlusBetweenWords(websiteName)}
                 ref={inputRef}
                 autoFocus
               />
@@ -273,7 +283,7 @@ const SearchBar = () => {
               }}
             >
               <span className="pl-2">
-                <Icons name={websiteName.toLowerCase()} />
+                <SmIcons name={websiteName.toLowerCase()} />
               </span>
               <h1 className="p-2 font-medium">{websiteName}</h1>
             </div>

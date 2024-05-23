@@ -22,7 +22,7 @@ interface Store {
 //create store
 const useStore  = create<Store>((set) => ({
     colorTheme: "#8D9093",
-    websiteName: "Enter Website",
+    websiteName: "",
     searchQuery: "",
     tabpressed: false,
     matchedWebsite: null,

@@ -5,6 +5,7 @@ export type Website = {
   url: string;
   SearchURL?: string;
   colorTheme: string;
+  darkTheme?: boolean;
   logo?: ReactElement;
 };
 

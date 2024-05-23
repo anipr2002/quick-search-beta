@@ -100,5 +100,23 @@
         "url":"https://monkeytype.com",
         "SearchURL":"https://monkeytype.com/",
         "colorTheme":"#e2b718"
+    },
+    {
+        "name":"Medium",
+        "url":"https://medium.com",
+        "SearchURL":"https://medium.com/search?q=",
+        "colorTheme":"#292929"
+    },
+    {
+        "name" : "Notion",
+        "url" : "https://www.notion.so",
+        "SearchURL": "https://www.notion.so",
+        "colorTheme": "#000000"
+    },
+    {
+        "name":"Slack",
+        "url":"https://slack.com",
+        "SearchURL":"https://slack.com",
+        "colorTheme":"#1da1f2"
     }
 ]
