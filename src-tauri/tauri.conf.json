@@ -6,7 +6,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "Quick-surf-beta-0.0.0",
+    "productName": "Quick-surf",
     "version": "0.0.0"
   },
   "tauri": {
@@ -20,7 +20,7 @@
         "all": true
       },
       "shell": {
-        "all": false,
+        "all": true,
         "open": true
       },
       "window": {
@@ -37,11 +37,15 @@
       {
         "decorations": false,
         "transparent": true,
-        "title": "",
+        "title": "main",
         "center": true,
         "width": 1920,
         "height": 100,
-        "focus": false
+        "focus": false,
+        "skipTaskbar": true,
+        "resizable": false,
+        "visible": false,
+        "maximized": true
       }
     ],
     
@@ -49,6 +53,22 @@
       "csp": null
     },
     "bundle": {
+      "windows": {
+        "allowDowngrades": true,
+        "certificateThumbprint": null,
+        "digestAlgorithm": null,
+        "nsis": null,
+        "timestampUrl": null,
+        "tsp": false,
+        "webviewFixedRuntimePath": null,
+        "webviewInstallMode": {
+          "silent": true,
+          "type": "downloadBootstrapper"
+        },
+        "wix": {
+          "language": "en-US"
+        }
+      },
       "active": true,
       "targets": "all",
       "identifier": "com.quick-surf.dev",

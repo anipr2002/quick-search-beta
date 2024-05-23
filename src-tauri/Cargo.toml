@@ -1,7 +1,7 @@
 [package]
 name = "quick-surf"
 version = "0.0.0"
-description = "A Tauri App"
+description = "Quick Surf"
 authors = ["you"]
 edition = "2021"
 
@@ -11,10 +11,22 @@ edition = "2021"
 tauri-build = { version = "1.5", features = [] }
 
 [dependencies]
-tauri = { version = "1.5", features = [ "system-tray", "window-set-focus", "window-unmaximize", "window-set-always-on-top", "window-unminimize", "window-minimize", "window-maximize", "global-shortcut-all", "shell-open"] }
+tauri = { version = "1.5", features = [ "shell-all", "system-tray", "window-set-focus", "window-unmaximize", "window-set-always-on-top", "window-unminimize", "window-minimize", "window-maximize", "global-shortcut-all"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 tauri-plugin-positioner = { version = "1.0.4", features = ["system-tray"] }
+tauri-plugin-autostart = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
+open = "2.0.0"
+
+[dependencies.windows]
+version = "0.56.0"
+features = [
+    "Data_Xml_Dom",
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_System_Threading",
+    "Win32_UI_WindowsAndMessaging",
+]
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem

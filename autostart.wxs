@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <DirectoryRef Id="TARGETDIR">
+      <Component Id="AutoStartRegistryEntries" Guid="6B4846B4-C05D-425A-9B24-BDFABDAFE4DF">
+        <RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\Run">
+          <RegistryValue Name="[ProductName]" Type="string" Value="[INSTALLDIR][ProductName].exe"/>
+        </RegistryKey>
+      </Component>
+    </DirectoryRef>
+    <Feature Id="AutoStartRegistryEntries" Title="Run at OS startup" Absent="disallow">
+      <ComponentRef Id="AutoStartRegistryEntries" />
+    </Feature>
+  </Fragment>
+</Wix>

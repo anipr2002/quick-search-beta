@@ -1,5 +1,6 @@
 import { appWindow } from "@tauri-apps/api/window";
 import { registerAll } from "@tauri-apps/api/globalShortcut";
+import { invoke } from "@tauri-apps/api";
 
 export const registerShortCuts = async () => {
     
@@ -7,9 +8,11 @@ export const registerShortCuts = async () => {
       const isMinimized = await appWindow.isMinimized();
       if (isMinimized) {
         await appWindow.unminimize();
+        invoke("show_window");
         setAlwaysOnTop();
       } else{
         await appWindow.minimize();
+        invoke("hide_window")
       }
     });
   };
