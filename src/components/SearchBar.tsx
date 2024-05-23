@@ -8,7 +8,6 @@ import useStore from "../store/store";
 import { getAutocompleteSuggestions } from "../helper/autocompleteHelper";
 import { open } from "@tauri-apps/api/shell";
 import { appWindow } from "@tauri-apps/api/window";
-import { cn } from "../utils/cn";
 
 const SearchBar = () => {
   const {
@@ -38,6 +37,10 @@ const SearchBar = () => {
     }
   };
 
+  const addPlusBetweenWords = (searchQuery: string): string => {
+    return searchQuery.split(" ").join("+");
+  };
+
   const handleKeyPress = async (
     e: React.KeyboardEvent<HTMLInputElement>
   ): Promise<void> => {
@@ -45,7 +48,6 @@ const SearchBar = () => {
     if (e.key === "Tab" && !tabpressed) {
       e.preventDefault();
       handleTabPress();
-      //   console.log(colorTheme);
     } else if (e.key === "Escape") {
       if (!tabpressed) {
         await appWindow.minimize();
@@ -88,7 +90,7 @@ const SearchBar = () => {
 
       if (matched) {
         // Set the completed website name
-        setWebsiteName(matched.name);
+        setWebsiteName(addPlusBetweenWords(matched.name));
         // Set the color theme based on the completed website name
         getColorTheme(matched.colorTheme as string);
         // console.log(colorTheme);
@@ -99,12 +101,12 @@ const SearchBar = () => {
       if (!matched) {
         setWebsiteName("google");
         setColorTheme("google");
-        setSearchQuery(partialName);
+        setSearchQuery(websiteName);
       }
     } else if (partialName.length <= 2) {
       setWebsiteName("google");
       setColorTheme("google");
-      setSearchQuery(partialName);
+      setSearchQuery(addPlusBetweenWords(partialName));
     }
 
     inputRef.current?.focus();
@@ -121,7 +123,7 @@ const SearchBar = () => {
       );
 
       setMatchedWebsite(matched || null);
-      setWebsiteName(e.target.value);
+      setWebsiteName(addPlusBetweenWords(e.target.value));
     }
   };
 
@@ -153,7 +155,7 @@ const SearchBar = () => {
     if (website) {
       return website.url;
     } else {
-      return "https://www.google.com/search?q=" + websiteName + searchQuery;
+      return "https://www.google.com/search?q=" + websiteName;
     }
   };
 
@@ -168,6 +170,11 @@ const SearchBar = () => {
         console.error("Error opening the URL:", e);
       });
     } else {
+      const searchURL: string = constructWebsiteURL("google", websiteName);
+      setColorTheme("#8D9093");
+      open(searchURL).catch((e) => {
+        console.error("Error opening the URL:", e);
+      });
       alert("Please enter a valid website name");
       console.error("Please enter a valid website name");
     }
@@ -180,6 +187,11 @@ const SearchBar = () => {
         console.error("Error opening the URL:", e);
       });
     } else {
+      const websiteURL: string = contructWebsiteName("google");
+      setColorTheme("#8D9093");
+      open(websiteURL).catch((e) => {
+        console.error("Error opening the URL:", e);
+      });
       alert("Please enter a valid website name");
       console.error("Please enter a valid website name");
     }
@@ -213,7 +225,7 @@ const SearchBar = () => {
                 className="w-full h-full flex-1 p-2 bg-transparent outline-none font-medium text-white text-xl"
                 onKeyDown={handleKeyPress}
                 onChange={(e) => {
-                  setWebsiteName(e.target.value);
+                  setWebsiteName(addPlusBetweenWords(e.target.value));
                   handleInputChange(e);
                   if (e.target.value === "") {
                     setMatchedWebsite(null);
@@ -275,9 +287,8 @@ const SearchBar = () => {
                 onKeyDown={handleKeyPress}
                 placeholder={`Search ${websiteName}`}
                 onChange={(e) => {
-                  setSearchQuery(e.target.value);
+                  setSearchQuery(addPlusBetweenWords(e.target.value));
                 }}
-                value={searchQuery}
                 className="w-full h-full p-2 bg-transparent outline-none text-white text-xl"
               />
             </div>
