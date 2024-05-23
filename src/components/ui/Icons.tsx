@@ -14,7 +14,9 @@ import {
   FaWikipediaW,
   FaSpotify,
   FaSearch,
+  FaGithub,
 } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa6";
 import { SiNetflix } from "react-icons/si";
 
 interface IconsProps {
@@ -38,6 +40,8 @@ const Icons: React.FC<IconsProps> = ({ name, size }) => {
     wikipedia: <FaWikipediaW size={size} />,
     spotify: <FaSpotify size={size} />,
     netflix: <SiNetflix size={size} />,
+    gmail: <FaEnvelope size={size} />,
+    github: <FaGithub size={size} />,
   };
 
   // Get the icon based on the provided website name

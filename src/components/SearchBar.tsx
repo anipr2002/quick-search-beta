@@ -187,14 +187,14 @@ const SearchBar = () => {
   return (
     <div className="w-screen h-screen bg-transparent px-96 flex items-center justify-center">
       <div
-        className={`w-full h-20 grainy rounded-xl gap-5 flex items-center px-4`}
+        className={`w-full h-20 grainy rounded-xl gap-5 flex items-center px-4 bg-black/95`}
         style={{
           boxShadow: `0 0 5px ${colorTheme}, 0 0 15px ${colorTheme}`,
         }}
       >
         {!tabpressed && !matchedWebsite && (
           <div className="ml-4">
-            <Search size={24} color="black" />
+            <Search size={24} color="white" />
           </div>
         )}
         {!tabpressed && matchedWebsite && (
@@ -209,7 +209,7 @@ const SearchBar = () => {
               <input
                 type="text"
                 placeholder="Enter Website"
-                className="w-full h-full flex-1 p-2 bg-transparent outline-none font-medium text-black text-xl"
+                className="w-full h-full flex-1 p-2 bg-transparent outline-none font-medium text-xl"
                 onKeyDown={handleKeyPress}
                 onChange={(e) => {
                   setWebsiteName(e.target.value);
@@ -253,7 +253,7 @@ const SearchBar = () => {
           <>
             {/* This is the website name section */}
             <div
-              className={`w-fit h-fit border text-white rounded-xl flex items-center ml-6`}
+              className={`w-fit h-fit border border-white/5 text-white rounded-xl flex items-center ml-6`}
               style={{
                 backgroundColor: colorTheme,
                 boxShadow: `0 0 5px ${colorTheme}, 0 0 15px ${colorTheme}`,
@@ -277,7 +277,7 @@ const SearchBar = () => {
                   setSearchQuery(e.target.value);
                 }}
                 value={searchQuery}
-                className="w-full h-full p-2 bg-transparent outline-none text-black text-xl"
+                className="w-full h-full p-2 bg-transparent outline-none text-white text-xl"
               />
             </div>
           </>

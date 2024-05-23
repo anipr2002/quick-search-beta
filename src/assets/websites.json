@@ -82,5 +82,17 @@
         "url" : "https://www.chatgpt.com",
         "SearchURL": "https://www.chatgpt.com/search?q=",
         "colorTheme":"#78ad9f"
+    },
+    {
+        "name": "Gmail",
+        "url" : "https://mail.google.com",
+        "SearchURL": "https://mail.google.com/mail/u/0/#search/",
+        "colorTheme": "#34a853"
+    },
+    {
+        "name":"Github",
+        "url":"https://github.com",
+        "SearchURL":"https://github.com/search?q=",
+        "colorTheme":"#010409"
     }
 ]
